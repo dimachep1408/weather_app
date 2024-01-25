@@ -2,7 +2,7 @@ from datetime import datetime
 import requests
 from PIL import Image
 import customtkinter
-import find_file_path as path
+
 api = ("5c01f4a0f47bf79a74ee7d8b066e45a0")  
 url_api = f"http://api.openweathermap.org/data/2.5/weather?q=Prague&type=like&APPID=5c01f4a0f47bf79a74ee7d8b066e45a0&"
 response = requests.get(url_api)

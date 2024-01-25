@@ -1,26 +1,11 @@
 from datetime import datetime
 import requests
-from PIL import Image
-import customtkinter
+import pytz
+api = ("d9fc631df70357d311e7bab294dab41f")  
+url_api = f"http://api.openweathermap.org/data/2.5/forecast?q=Dnipro&like&APPID=5c01f4a0f47bf79a74ee7d8b066e45a0&"
 
-api = ("5c01f4a0f47bf79a74ee7d8b066e45a0")  
-url_api = f"http://api.openweathermap.org/data/2.5/weather?q=Dnipro&like&APPID=5c01f4a0f47bf79a74ee7d8b066e45a0&"
 response = requests.get(url_api)
-
 data = response.json()
-
-min_temp = int(data["main"]["temp_min"])
-max_temp = int(data["main"]["temp_max"])
-temp_present = int(data["main"]["temp"])
-weather_main = data["weather"][0]["main"]
-weather_description = data["weather"][0]["description"]
-sunset_time = data["sys"]["sunset"]
-sunrise_time = data["sys"]["sunrise"]
-
-sunset_time = datetime.utcfromtimestamp(sunset_time).strftime('%H:%M')
-sunrise_time = datetime.utcfromtimestamp(sunrise_time).strftime('%H:%M')
-
-sun = None
 
 weather_main_translate = {
     "Clear": "Безхмарно",
@@ -72,13 +57,34 @@ weather_description_translate = {
    "thunderstorm with heavy drizzle": "Гроза з сильною мрякою "
 
 }
+now_kyiv = datetime.now(pytz.timezone("Europe/Kyiv"))
+
+list_events = []
+list_temp = []
+list_time = []
 
 
-weather_description = weather_description_translate.get(weather_description)
-weather_main = weather_main_translate.get(weather_main)
+if "list" in data:
+    forecast_list = data["list"]
 
-min_temp_celsius = min_temp - 273
-max_temp_celsius = max_temp - 273
-temp_present_celsius = temp_present - 273
+    for forecast in forecast_list:
+        dt_txt = forecast.get("dt_txt")
+        dt = datetime.strptime(dt_txt, "%Y-%m-%d %H:%M:%S")
+        
+        if dt > datetime.now():
+            temperature = int(forecast["main"]["temp"]) - 273
+            weather_description = forecast["weather"][0]["description"]
 
-print (temp_present_celsius)
+            weather_description = weather_description_translate.get(weather_description)
+            weather = f"Очікуєтся {weather_description_translate} приблизно о {dt.strftime('%Y-%m-%d %H:%M:%S')}"
+
+            list_events.append(weather_description)
+            list_temp.append(temperature)
+            list_time.append(dt.strftime('%H:00'))
+            
+            # print(f"Прогноз на {dt.strftime('%Y-%m-%d %H:%M:%S')}:")
+            # print(f"Температура: {temperature}°C")
+            # print(f"Описание: {weather_description}")
+            # print(list_events)
+            print(list_temp)
+            #print(list_time)
