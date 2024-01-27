@@ -1,5 +1,6 @@
 from datetime import datetime
 import requests
+import pytz
 api = ("5c01f4a0f47bf79a74ee7d8b066e45a0")  
 url_api = f"http://api.openweathermap.org/data/2.5/forecast?q=Warsaw&like&APPID=5c01f4a0f47bf79a74ee7d8b066e45a0&"
 
@@ -58,6 +59,8 @@ weather_description_translate = {
    "thunderstorm with heavy drizzle": "Гроза з сильною мрякою "
 
 }
+
+now_warsaw = datetime.now(pytz.timezone("Europe/Warsaw"))
 
 list_events = []
 list_temp = []

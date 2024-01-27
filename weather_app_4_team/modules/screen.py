@@ -257,23 +257,17 @@ praga = customtkinter.CTkLabel(screen, text = "Прага", text_color= "white",
 
 weather_icon = customtkinter.CTkImage(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"),size = (171, 159))
 
-if w_api_D.weather_description == "few clouds" or  "scattered clouds" or "broken clouds" or "overcast clouds":
+if w_api_D.weather_main == "Безхмарно":
+    weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"))
 
-
+elif w_api_D.weather_main == "Хмарно":
     weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
 
-
-elif w_api_D.weather_description == "moderate rain"  or "heavy intensity rain":
+elif w_api_D.weather_main == "Дощ":
     weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
 
-elif w_api_D.weather_description == "very heavy rain":
-    weather_icon.configure(ight_image= Image.open(r"C:\weather_app_4_team\modules\images\storm_241272.png"))
-
-elif w_api_D.weather_description == "light snow" or "moderate snow" or "heavy snow":
+elif w_api_D.weather_main == "Сніг":
     weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
-
-elif w_api_D.weather_description == "sleet":
-    weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412766.png"))
 
 
 weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_icon) 
@@ -281,6 +275,25 @@ weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_
 
 def switch_position1():
     global weather_icon_label
+
+    event_dnipro.configure(bg_color = "#5DA7B1")
+    min_max_temp_dnipro.configure(bg_color = "#5DA7B1")
+
+    event_kyiv.configure(bg_color = "#096C82")
+    min_max_temp_kyiv.configure(bg_color = "#096C82")
+
+    event_rome.configure(bg_color = "#096C82")
+    min_max_temp_rome.configure(bg_color = "#096C82")
+
+    event_london.configure(bg_color = "#096C82")
+    min_max_temp_london.configure(bg_color = "#096C82")
+
+    event_warsaw.configure(bg_color = "#096C82")
+    min_max_temp_warsaw.configure(bg_color = "#096C82")
+
+    event_prague.configure(bg_color = "#096C82")
+    min_max_temp_prague.configure(bg_color = "#096C82")
+
 
     temp_dnipro.configure(bg_color = "#5DA7B1")
     temp_kyiv.configure(bg_color = "#096C82")
@@ -304,27 +317,23 @@ def switch_position1():
 
 
 
-    weather_icon = customtkinter.CTkImage(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"),size = (171, 159))
 
-    if w_api_D.weather_description == "few clouds" or  "scattered clouds" or "broken clouds" or "overcast clouds":
 
+    if w_api_D.weather_main == "Хмарно":
 
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
 
+    if w_api_D.weather_main == "Безхмарно":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"))
 
-    elif w_api_D.weather_description == "moderate rain"  or "heavy intensity rain":
+    elif w_api_D.weather_main == "Хмарно":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
+
+    elif w_api_D.weather_main == "Дощ":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
 
-    elif w_api_D.weather_description == "very heavy rain":
-        weather_icon.configure(ight_image= Image.open(r"C:\weather_app_4_team\modules\images\storm_241272.png"))
-
-    elif w_api_D.weather_description == "light snow" or "moderate snow" or "heavy snow":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
-
-    elif w_api_D.weather_description == "sleet":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412766.png"))
-
-    weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_icon) 
+    elif w_api_D.weather_main == "Сніг":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png")) 
 
 
     frame3.configure(fg_color = "#5DA7B1", hover_color = "#5DA7B1")
@@ -368,7 +377,23 @@ def switch_position2():
     global weather_icon_label
 
 
+    event_dnipro.configure(bg_color = "#096C82")
+    min_max_temp_dnipro.configure(bg_color = "#096C82")
 
+    event_kyiv.configure(bg_color = "#5DA7B1")
+    min_max_temp_kyiv.configure(bg_color = "#5DA7B1")
+
+    event_rome.configure(bg_color = "#096C82")
+    min_max_temp_rome.configure(bg_color = "#096C82")
+
+    event_london.configure(bg_color = "#096C82")
+    min_max_temp_london.configure(bg_color = "#096C82")
+
+    event_warsaw.configure(bg_color = "#096C82")
+    min_max_temp_warsaw.configure(bg_color = "#096C82")
+    
+    event_prague.configure(bg_color = "#096C82")
+    min_max_temp_prague.configure(bg_color = "#096C82")
 
     temp_dnipro.configure(bg_color = "#096C82")
     temp_kyiv.configure(bg_color = "#5DA7B1")
@@ -392,27 +417,18 @@ def switch_position2():
 
 
 
-    weather_icon = customtkinter.CTkImage(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"),size = (171, 159))
+    if w_api_K.weather_main == "Безхмарно":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"))
 
-    if w_api_K.weather_description == "few clouds" or  "scattered clouds" or "broken clouds" or "overcast clouds":
-
-
+    elif w_api_K.weather_main == "Хмарно":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
 
-
-    elif w_api_K.weather_description == "moderate rain"  or "heavy intensity rain":
+    elif w_api_K.weather_main == "Дощ":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
 
-    elif w_api_K.weather_description == "very heavy rain":
-        weather_icon.configure(ight_image= Image.open(r"C:\weather_app_4_team\modules\images\storm_241272.png"))
-
-    elif w_api_K.weather_description == "light snow" or "moderate snow" or "heavy snow":
+    elif w_api_K.weather_main == "Сніг":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
 
-    elif w_api_K.weather_description == "sleet":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412766.png"))
-
-    weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_icon) 
 
     frame3.configure(fg_color = "#096C82", hover_color= "#096C82")
     label3.configure(fg_color = "#096C82")
@@ -451,6 +467,27 @@ def switch_position2():
 
 def switch_position3():
 
+    event_dnipro.configure(bg_color = "#096C82")
+    min_max_temp_dnipro.configure(bg_color = "#096C82")
+
+    event_kyiv.configure(bg_color = "#096C82")
+    min_max_temp_kyiv.configure(bg_color = "#096C82")
+
+    event_rome.configure(bg_color = "#096C82")
+    min_max_temp_rome.configure(bg_color = "#096C82")
+
+    event_london.configure(bg_color = "#5DA7B1")
+    min_max_temp_london.configure(bg_color = "#5DA7B1")
+
+    event_warsaw.configure(bg_color = "#096C82")
+    min_max_temp_warsaw.configure(bg_color = "#096C82")
+
+    event_prague.configure(bg_color = "#096C82")
+    min_max_temp_prague.configure(bg_color = "#096C82")
+
+
+
+
     time_label_dnipro.place_forget()
     date_label_dnipro.place_forget()
     time_label_kyiv.place_forget()
@@ -467,31 +504,27 @@ def switch_position3():
 
     temp_dnipro.configure(bg_color = "#096C82")
     temp_kyiv.configure(bg_color = "#096C82")
-    temp_rome.configure(bg_color = "#5DA7B1")
-    temp_london.configure(bg_color = "#096C82")
+    temp_rome.configure(bg_color = "#096C82")
+    temp_london.configure(bg_color = "#5DA7B1")
     temp_warsaw.configure(bg_color = "#096C82")
     temp_prague.configure(bg_color = "#096C82")
 
     global weather_icon_label
 
-    weather_icon = customtkinter.CTkImage(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"),size = (171, 159))
 
-    if w_api_R.weather_description == "few clouds" or  "scattered clouds" or "broken clouds" or "overcast clouds":
+
+    if w_api_L.weather_main == "Безхмарно":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+
+    elif w_api_L.weather_main == "Хмарно":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
 
-    elif w_api_R.weather_description == "moderate rain"  or "heavy intensity rain":
+    elif w_api_L.weather_main == "Дощ":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
 
-    elif w_api_R.weather_description == "very heavy rain":
-        weather_icon.configure(ight_image= Image.open(r"C:\weather_app_4_team\modules\images\storm_241272.png"))
-
-    elif w_api_R.weather_description == "light snow" or "moderate snow" or "heavy snow":
+    elif w_api_L.weather_main == "Сніг":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
 
-    elif w_api_R.weather_description == "sleet":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412766.png"))
-
-    weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_icon) 
 
 
 
@@ -535,7 +568,23 @@ def switch_position3():
 def switch_position4():
     global weather_icon_label
     
+    event_dnipro.configure(bg_color = "#096C82")
+    min_max_temp_dnipro.configure(bg_color = "#096C82")
 
+    event_kyiv.configure(bg_color = "#096C82")
+    min_max_temp_kyiv.configure(bg_color = "#096C82")
+
+    event_rome.configure(bg_color = "#096C82")
+    min_max_temp_rome.configure(bg_color = "#096C82")
+
+    event_london.configure(bg_color = "#096C82")
+    min_max_temp_london.configure(bg_color = "#096C82")
+
+    event_warsaw.configure(bg_color = "#096C82")
+    min_max_temp_warsaw.configure(bg_color = "#096C82")
+    
+    event_prague.configure(bg_color = "#5DA7B1")
+    min_max_temp_prague.configure(bg_color = "#5DA7B1")
 
     time_label_dnipro.place_forget()
     date_label_dnipro.place_forget()
@@ -557,31 +606,24 @@ def switch_position4():
     temp_dnipro.configure(bg_color = "#096C82")
     temp_kyiv.configure(bg_color = "#096C82")
     temp_rome.configure(bg_color = "#096C82")
-    temp_london.configure(bg_color = "#5DA7B1")
+    temp_london.configure(bg_color = "#096C82")
     temp_warsaw.configure(bg_color = "#096C82")
-    temp_prague.configure(bg_color = "#096C82")
-
-    weather_icon = customtkinter.CTkImage(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"),size = (171, 159))
-
-    if w_api_L.weather_description == "few clouds" or  "scattered clouds" or "broken clouds" or "overcast clouds":
+    temp_prague.configure(bg_color = "#5DA7B1")
 
 
+
+    if w_api_P.weather_main == "Безхмарно":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"))
+
+    elif w_api_P.weather_main == "Хмарно":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
 
-
-    elif w_api_L.weather_description == "moderate rain"  or "heavy intensity rain":
+    elif w_api_P.weather_main == "Дощ":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
 
-    elif w_api_L.weather_description == "very heavy rain":
-        weather_icon.configure(ight_image= Image.open(r"C:\weather_app_4_team\modules\images\storm_241272.png"))
-
-    elif w_api_L.weather_description == "light snow" or "moderate snow" or "heavy snow":
+    elif w_api_P.weather_main == "Сніг":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
 
-    elif w_api_L.weather_description == "sleet":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412766.png"))
-
-    weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_icon) 
 
 
 
@@ -625,7 +667,23 @@ def switch_position4():
 def switch_position5():
     global weather_icon_label
 
+    event_dnipro.configure(bg_color = "#096C82")
+    min_max_temp_dnipro.configure(bg_color = "#096C82")
 
+    event_kyiv.configure(bg_color = "#096C82")
+    min_max_temp_kyiv.configure(bg_color = "#096C82")
+
+    event_rome.configure(bg_color = "#5DA7B1")
+    min_max_temp_rome.configure(bg_color = "#5DA7B1")
+
+    event_london.configure(bg_color = "#096C82")
+    min_max_temp_london.configure(bg_color = "#096C82")
+
+    event_warsaw.configure(bg_color = "#096C82")
+    min_max_temp_warsaw.configure(bg_color = "#096C82")
+    
+    event_prague.configure(bg_color = "#096C82")
+    min_max_temp_prague.configure(bg_color = "#096C82")
 
     time_label_dnipro.place_forget()
     date_label_dnipro.place_forget()
@@ -645,32 +703,25 @@ def switch_position5():
 
     temp_dnipro.configure(bg_color = "#096C82")
     temp_kyiv.configure(bg_color = "#096C82")
-    temp_rome.configure(bg_color = "#096C82")
+    temp_rome.configure(bg_color = "#5DA7B1")
     temp_london.configure(bg_color = "#096C82")
-    temp_warsaw.configure(bg_color = "#5DA7B1")
+    temp_warsaw.configure(bg_color = "#096C82")
     temp_prague.configure(bg_color = "#096C82")
 
-    weather_icon = customtkinter.CTkImage(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"),size = (171, 159))
-
-    if w_api_W.weather_description == "few clouds" or  "scattered clouds" or "broken clouds" or "overcast clouds":
 
 
+    if w_api_R.weather_main == "Безхмарно":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"))
+
+    elif w_api_R.weather_main == "Хмарно":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
 
-
-    elif w_api_W.weather_description == "moderate rain"  or "heavy intensity rain":
+    elif w_api_R.weather_main == "Дощ":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
 
-    elif w_api_W.weather_description == "very heavy rain":
-        weather_icon.configure(ight_image= Image.open(r"C:\weather_app_4_team\modules\images\storm_241272.png"))
-
-    elif w_api_W.weather_description == "light snow" or "moderate snow" or "heavy snow":
+    elif w_api_R.weather_main == "Сніг":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
 
-    elif w_api_W.weather_description == "sleet":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412766.png"))
-
-    weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_icon) 
 
 
 
@@ -717,6 +768,25 @@ def switch_position5():
 def switch_position6():
     global weather_icon_label
 
+    event_dnipro.configure(bg_color = "#096C82")
+    min_max_temp_dnipro.configure(bg_color = "#096C82")
+
+    event_kyiv.configure(bg_color = "#096C82")
+    min_max_temp_kyiv.configure(bg_color = "#096C82")
+
+    event_rome.configure(bg_color = "#096C82")
+    min_max_temp_rome.configure(bg_color = "#096C82")
+
+    event_london.configure(bg_color = "#096C82")
+    min_max_temp_london.configure(bg_color = "#096C82")
+
+    event_warsaw.configure(bg_color = "#5DA7B1")
+    min_max_temp_warsaw.configure(bg_color = "#5DA7B1")
+    
+    event_prague.configure(bg_color = "#096C82")
+    min_max_temp_prague.configure(bg_color = "#096C82")
+
+
 
     time_label_dnipro.place_forget()
     date_label_dnipro.place_forget()
@@ -738,33 +808,23 @@ def switch_position6():
     temp_kyiv.configure(bg_color = "#096C82")
     temp_rome.configure(bg_color = "#096C82")
     temp_london.configure(bg_color = "#096C82")
-    temp_warsaw.configure(bg_color = "#096C82")
-    temp_prague.configure(bg_color = "#5DA7B1")
-
-    weather_icon = customtkinter.CTkImage(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"),size = (171, 159))
-
-    if w_api_P.weather_description == "few clouds" or  "scattered clouds" or "broken clouds" or "overcast clouds":
+    temp_warsaw.configure(bg_color = "#5DA7B1")
+    temp_prague.configure(bg_color = "#096C82")
 
 
+
+    if w_api_W.weather_main == "Безхмарно":
+        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"))
+
+    elif w_api_W.weather_main == "Хмарно":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412798.png"))
 
-
-    elif w_api_P.weather_description == "moderate rain"  or "heavy intensity rain":
+    elif w_api_W.weather_main == "Дощ":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
 
-    elif w_api_P.weather_description == "very heavy rain":
-        weather_icon.configure(ight_image= Image.open(r"C:\weather_app_4_team\modules\images\storm_241272.png"))
-
-    elif w_api_P.weather_description == "light snow" or "moderate snow" or "heavy snow":
+    elif w_api_W.weather_main == "Сніг":
         weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
 
-    elif w_api_P.weather_description == "sleet":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412766.png"))
-
-    elif w_api_P.weather_main == "snow":
-        weather_icon.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
-
-    weather_icon_label = customtkinter.CTkLabel(screen, text = None, image= weather_icon) 
 
 
 
@@ -877,6 +937,108 @@ now_warsaw = datetime.now(pytz.timezone(warsaw_timezone))
 time_update_warsaw = now_warsaw.strftime("%H:%M")
 time_label_warsaw.configure(text = time_update_warsaw)
 
+forecast_img1 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52))
+forecast_img2 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52)) 
+forecast_img3 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52))
+forecast_img4 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52)) 
+forecast_img5 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52))
+forecast_img6 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52)) 
+forecast_img7 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52))
+forecast_img8 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52)) 
+forecast_img9 = customtkinter.CTkImage(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412794.png"), size = (50, 52))
+
+
+forecast_img_label1 = customtkinter.CTkLabel(screen, image = forecast_img1, text = " ", width = 50, height = 52)
+forecast_img_label2 = customtkinter.CTkLabel(screen, image = forecast_img2, text = " ", width = 50, height = 52)
+forecast_img_label3 = customtkinter.CTkLabel(screen, image = forecast_img3, text = " ", width = 50, height = 52)
+forecast_img_label4 = customtkinter.CTkLabel(screen, image = forecast_img4, text = " ", width = 50, height = 52)
+forecast_img_label5 = customtkinter.CTkLabel(screen, image = forecast_img5, text = " ", width = 50, height = 52)
+forecast_img_label6 = customtkinter.CTkLabel(screen, image = forecast_img6, text = " ", width = 50, height = 52)
+forecast_img_label7 = customtkinter.CTkLabel(screen, image = forecast_img7, text = " ", width = 50, height = 52)
+forecast_img_label8 = customtkinter.CTkLabel(screen, image = forecast_img8, text = " ", width = 50, height = 52)
+forecast_img_label9 = customtkinter.CTkLabel(screen, image = forecast_img9, text = " ", width = 50, height = 52)
+
+if F_W_D.list_events[0] == "Хмарно":
+    forecast_img1.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[0] == "Сніг":
+    forecast_img1.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[0] == "Безхмарно":
+    forecast_img1.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[0] == "Дощ":
+    forecast_img1.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+if F_W_D.list_events[1] == "Хмарно":
+    forecast_img2.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[1] == "Сніг":
+    forecast_img2.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[1] == "Безхмарно":
+    forecast_img2.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[1] == "Дощ":
+    forecast_img2.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+if F_W_D.list_events[2] == "Хмарно":
+    forecast_img3.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[2] == "Сніг":
+    forecast_img3.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[2] == "Безхмарно":
+    forecast_img3.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[2] == "Дощ":
+    forecast_img3.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+if F_W_D.list_events[3] == "Хмарно":
+    forecast_img4.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[3] == "Сніг":
+    forecast_img4.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[3] == "Безхмарно":
+    forecast_img4.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[3] == "Дощ":
+    forecast_img4.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+if F_W_D.list_events[4] == "Хмарно":
+    forecast_img5.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[4] == "Сніг":
+    forecast_img5.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[4] == "Безхмарно":
+    forecast_img5.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[4] == "Дощ":
+    forecast_img5.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+if F_W_D.list_events[5] == "Хмарно":
+    forecast_img7.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[5] == "Сніг":
+    forecast_img6.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[5] == "Безхмарно":
+    forecast_img6.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[5] == "Дощ":
+    forecast_img6.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+if F_W_D.list_events[6] == "Хмарно":
+    forecast_img7.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[6] == "Сніг":
+    forecast_img7.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[6] == "Безхмарно":
+    forecast_img7.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[6] == "Дощ":
+    forecast_img7.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+if F_W_D.list_events[7] == "Хмарно":
+    forecast_img8.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images/sunny_2412798.png"))
+elif F_W_D.list_events[7] == "Сніг":
+    forecast_img8.configure(light_image = Image.open(r"C:\weather_app_4_team\modules\images\snowy_2412768.png"))
+elif F_W_D.list_events[7] == "Безхмарно":
+    forecast_img8.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\sunny_2412794.png"))
+elif F_W_D.list_events[7] == "Дощ":
+    forecast_img8.configure(light_image= Image.open(r"C:\weather_app_4_team\modules\images\rainy_2412747.png"))
+
+
+forecast_img_label1.place(x = 350, y = 580)
+forecast_img_label2.place(x = 450, y = 580)
+forecast_img_label3.place(x = 550, y = 580)
+forecast_img_label4.place(x = 650, y = 580)
+forecast_img_label5.place(x = 750, y = 580)
+forecast_img_label6.place(x = 850, y = 580)
+forecast_img_label7.place(x = 950, y = 580)
+forecast_img_label8.place(x = 1050, y = 580)
 
 time1 = customtkinter.CTkLabel(screen, text= f"{F_W_D.list_time[0]}", width=51, height= 31, font= (custom_font, 18), text_color= "white")
 time2 = customtkinter.CTkLabel(screen, text= f"{F_W_D.list_time[1]}", width=51, height= 31, font= (custom_font, 18), text_color= "white")
@@ -901,26 +1063,23 @@ temp9 = customtkinter.CTkLabel(screen, text= f"{F_W_D.list_temp[8]}°", width=41
 temp_dnipro = customtkinter.CTkLabel(screen, text= f"{w_api_D.temp_present_celsius}°", width=49, height= 41, font= (custom_font, 40), text_color= "white")
 temp_kyiv = customtkinter.CTkLabel(screen, text= f"{w_api_K.temp_present_celsius}°", width=49, height= 41, font= (custom_font, 40), text_color= "white", bg_color = "#096C82")
 temp_rome = customtkinter.CTkLabel(screen, text= f"{w_api_R.temp_present_celsius}°", width=40, height= 41, font= (custom_font, 40), text_color= "white", bg_color = "#096C82")
-temp_london = customtkinter.CTkLabel(screen, text= f"{w_api_L.temp_present_celsius}°", width=40, height= 41, font= (custom_font, 40), text_color= "white", bg_color = "#096C82")
+temp_london = customtkinter.CTkLabel(screen, text= f"{w_api_L.temp_present_celsius}°", width=40, height= 41, font= (custom_font, 40), text_color= "white", bg_color= "#096C82")
 temp_prague = customtkinter.CTkLabel(screen, text= f"{w_api_P.temp_present_celsius}°", width=40, height= 41, font= (custom_font, 40), text_color= "white", bg_color = "#096C82")
 temp_warsaw = customtkinter.CTkLabel(screen, text= f"{w_api_W.temp_present_celsius}°", width=40, height= 41, font= (custom_font, 40), text_color= "white", bg_color = "#096C82")
 
-min_max_temp_dnipro = customtkinter.CTkLabel(screen, text= f"мін.: {w_api_D.min_temp_celsius}°,макс.: {w_api_D.min_temp_celsius}°", width=104, height= 14, font= (custom_font, 12), text_color= "white")
-
-
-
+min_max_temp_dnipro = customtkinter.CTkLabel(screen, text= f"мін.: {w_api_D.min_temp_celsius}°,макс.: {w_api_D.max_temp_celsius}°", width=104, height= 14, font= (custom_font, 12), text_color= "white")
+min_max_temp_kyiv = customtkinter.CTkLabel(screen, text= f"мін.: {w_api_K.min_temp_celsius}°,макс.: {w_api_K.max_temp_celsius}°", width=104, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+min_max_temp_rome = customtkinter.CTkLabel(screen, text= f"мін.: {w_api_R.min_temp_celsius}°,макс.: {w_api_R.max_temp_celsius}°", width=104, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+min_max_temp_london = customtkinter.CTkLabel(screen, text= f"мін.: {w_api_L.min_temp_celsius}°,макс.: {w_api_L.max_temp_celsius}°", width=104, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+min_max_temp_warsaw = customtkinter.CTkLabel(screen, text= f"мін.: {w_api_W.min_temp_celsius}°,макс.: {w_api_W.max_temp_celsius}°", width=104, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+min_max_temp_prague = customtkinter.CTkLabel(screen, text= f"мін.: {w_api_K.min_temp_celsius}°,макс.: {w_api_K.max_temp_celsius}°", width=104, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
 
 event_dnipro = customtkinter.CTkLabel(screen, text= f"{w_api_D.weather_main}", width=52, height= 14, font= (custom_font, 12), text_color= "white")
-
-
-# label12 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+1}:00"),text_color= "white", font= (custom_font, 31))
-# label13 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+2}:00"),text_color= "white", font= (custom_font, 31))
-# label14 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+3}:00"),text_color= "white", font= (custom_font, 31))
-# label15 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+4}:00"),text_color= "white", font= (custom_font, 31))
-# label16 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+5}:00"),text_color= "white", font= (custom_font, 31))
-# label17 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+6}:00"),text_color= "white", font= (custom_font, 31))
-# label18 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+7}:00"),text_color= "white", font= (custom_font, 31))
-# label19 = customtkinter.CTkLabel(screen, text = now_dnipro.strftime(f"%H{+8}:00"),text_color= "white", font= (custom_font, 31))
+event_kyiv = customtkinter.CTkLabel(screen, text= f"{w_api_K.weather_main}", width=52, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+event_rome = customtkinter.CTkLabel(screen, text= f"{w_api_R.weather_main}", width=52, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+event_london = customtkinter.CTkLabel(screen, text= f"{w_api_L.weather_main}", width=52, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+event_warsaw = customtkinter.CTkLabel(screen, text= f"{w_api_W.weather_main}", width=52, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
+event_prague = customtkinter.CTkLabel(screen, text= f"{w_api_P.weather_main}", width=52, height= 14, font= (custom_font, 12), text_color= "white", bg_color = "#096C82")
 
 
 def update_time():
@@ -990,15 +1149,31 @@ def call_funcs():
     
     weather_icon_label.place(x =  340, y = 225)
 
-    temp_dnipro.place(x = 200, y = 40)
+    temp_dnipro.place(x = 185, y = 40)
     min_max_temp_dnipro.place(x = 140, y = 100)
     event_dnipro.place(x = 18, y = 100)
+    # time_dnipro_min.place(x = 200, y = 111)
 
     temp_kyiv.place(x = 200, y = 170)
+    min_max_temp_kyiv.place(x = 140, y = 235)
+    event_kyiv.place(x = 22, y = 235)
+
     temp_rome.place(x = 180, y = 300)
+    min_max_temp_rome.place(x = 140, y = 365 )
+    event_rome.place(x = 22, y = 365)
+
     temp_london.place(x = 180, y = 440)
+    min_max_temp_london.place(x = 140, y = 495)
+    event_london.place(x = 22, y = 495)
+    
     temp_warsaw.place(x = 200, y = 575)
+    min_max_temp_warsaw.place(x = 140, y = 625)
+    event_warsaw.place(x = 22, y = 625)
+    
     temp_prague.place(x = 200, y = 700)
+    min_max_temp_prague.place(x = 140, y = 765)
+    event_prague.place(x = 22, y = 765)
+    
 
     frame3.place(x = 15, y = 25)
     label3.place(x = 22, y = 50)
@@ -1006,17 +1181,17 @@ def call_funcs():
     frame4.place(x = 15, y = 157)
     label4.place(x = 22, y = 170)
 
-    frame5.place(x = 15, y = 289)
-    label5.place(x = 22, y = 302)
+    frame5.place(x = 15, y = 421)
+    label5.place(x = 22, y = 432)
 
-    frame6.place(x = 15, y = 421)
-    label6.place(x = 22, y = 432)
+    frame6.place(x = 15, y = 685)
+    label6.place(x = 22, y = 698)
 
-    frame7.place(x = 15, y = 553)
-    label7.place(x = 22, y = 576)
+    frame7.place(x = 15, y = 289)
+    label7.place(x = 22, y = 302)
 
-    frame8.place(x = 15, y = 685)
-    label8.place(x = 22, y = 698)
+    frame8.place(x = 15, y = 553)
+    label8.place(x = 22, y = 576)
 
 
     frame9.place(x = 325, y = 473)

@@ -74,17 +74,19 @@ if "list" in data:
         if dt > datetime.now():
             temperature = int(forecast["main"]["temp"]) - 273
             weather_description = forecast["weather"][0]["description"]
+            weather_main = forecast["weather"][0]["main"]
 
             weather_description = weather_description_translate.get(weather_description)
+            weather_main = weather_main_translate.get(weather_main)
             weather = f"Очікуєтся {weather_description_translate} приблизно о {dt.strftime('%Y-%m-%d %H:%M:%S')}"
 
-            list_events.append(weather_description)
+            list_events.append(weather_main)
             list_temp.append(temperature)
             list_time.append(dt.strftime('%H:00'))
             
             # print(f"Прогноз на {dt.strftime('%Y-%m-%d %H:%M:%S')}:")
             # print(f"Температура: {temperature}°C")
             # print(f"Описание: {weather_description}")
-            # print(list_events)
-            print(list_temp)
+            print(list_events)
+            # print(list_temp)
             #print(list_time)
